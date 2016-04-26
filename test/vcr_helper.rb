@@ -1,6 +1,6 @@
 require 'vcr'
 
 VCR.configure do |config|
-  config.cassette_library_dir = Rails.root.join("test", "vcr")
+  config.cassette_library_dir = 'test/vcr'
   config.hook_into :faraday
 end
