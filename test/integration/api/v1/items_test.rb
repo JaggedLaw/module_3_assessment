@@ -42,4 +42,17 @@ class ItemsTest < ActionDispatch::IntegrationTest
 
   end
 
+  def test_item_can_be_created_from_params
+    before_count = Item.count
+
+    post "/api/v1/items", name: "NewItem", description: "new description"
+
+    assert_response 201
+
+    after_count = Item.count
+
+    assert_equal 1, (after_count - before_count)
+
+  end
+
 end
