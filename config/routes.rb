@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
   root 'items#index'
 
   resources :items,  only: [:index, :show]
@@ -14,4 +16,6 @@ Rails.application.routes.draw do
 
     end
   end
+
+  post :search, to: "search#index"
 end
